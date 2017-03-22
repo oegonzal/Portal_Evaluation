@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="p1">
+
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> P1 Visa</title>
+        <base href="/">
+        
+        <link rel="stylesheet" href="assets/lib/angular-ui-grid/ui-grid.min.css" />
+        <link rel="stylesheet" href="assets/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/lib/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="assets/lib/angular-ui-select/dist/select.min.css" />
+        <link rel="stylesheet" href="assets/lib/angular-material/angular-material.css" />
+        <link rel="stylesheet" href="assets/lib/ngToast/dist/ngToast-animations.min.css" />
+        <link rel="stylesheet" href="assets/lib/angular-bootstrap/ui-bootstrap-csp.css" />
+        <link rel="stylesheet" href="assets/lib/angular-material-data-table/dist/md-data-table.css" />
+
+        <link rel="stylesheet" href="assets/css/p1.style.css" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
+    </head>
+    
+    <body>
+        
+        <origin-page></origin-page>
+        <visa-footer></visa-footer>
+        
+        <!-- IE required polyfills, in this exact order -->
+        <script src="assets/js/es6-shim.min.js"></script>
+        <script src="assets/js/system-polyfills.js"></script>
+        <script src="assets/js/shims_for_IE.js"></script>
+
+        <!-- Lib source files -->
+        <script src="assets/lib/jquery/dist/jquery.js" type="text/javascript"></script>
+        <script src="assets/lib/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+        <script src="assets/lib/angular/angular.js" type="text/javascript"></script>
+        <script src="assets/lib/angular-component-router/angular_1_router.js" type="text/javascript"></script>
+        <script src="assets/lib/angular-resource/angular-resource.js" type="text/javascript"></script>
+        <script src="assets/lib/angular-animate/angular-animate.js" type="text/javascript"></script>
+        <script src="assets/lib/ng-file-upload/dist/ng-file-upload-shim.min.js" type="text/javascript"></script>
+        <script src="assets/lib/ng-file-upload/dist/ng-file-upload.min.js" type="text/javascript"></script>
+        <script src="assets/lib/file-saver/FileSaver.min.js" type="text/javascript"></script>
+        <script src="assets/lib/angular-ui-select/dist/select.min.js" type="text/javascript"></script>
+        <script src="assets/lib/angular-aria/angular-aria.min.js" type="text/javascript"></script>
+        <script src="assets/lib/angular-messages/angular-messages.min.js" type="text/javascript"></script>
+        <script src="assets/lib/angular-sanitize/angular-sanitize.min.js" type="text/javascript"></script>
+        <script src="assets/lib/ngToast/dist/ngToast.min.js" type="text/javascript"></script>
+        <script src="assets/lib/angular-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+        <script src="assets/lib/angular-ui-grid/ui-grid.min.js" type="text/javascript"></script>
+        <script src="assets/lib/angular-material-data-table/dist/md-data-table.min.js" type="text/javascript"></script>
+
+        <!-- Material -->
+        <script src="assets/lib/angular-material/angular-material.min.js" type="text/javascript"></script>
+
+        <!--Navbar scripts-->
+        <script src="assets/js/jquery.sticky.js"></script>
+
+        <!-- Socket io file-->
+        <script src="http://sl73vlporapd001:8443/socket.io/socket.io.js"></script>
+        
+        <!-- source files -->
+        <script src="app/app.module.js" type="text/javascript"></script>
+        <script src="app/app.routes.js" type="text/javascript"></script>
+        <script src="app/components/admin/dashboard.component.js" type="text/javascript"></script>
+        <script src="app/components/admin/send.email.component.js" type="text/javascript"></script>
+        <script src="app/components/admin/summary.component.js" type="text/javascript"></script>
+        <script src="app/components/admin/summary.all.component.js" type="text/javascript"></script>
+        <script src="app/components/admin/archive.component.js" type="text/javascript"></script>
+        <script src="app/components/auth/login/login.component.js" type="text/javascript"></script>
+        <script src="app/components/user/dashboard.component.js" type="text/javascript"></script>
+        <script src="app/components/evaluation/create.evaluations.component.js" type="text/javascript"></script>
+        <script src="app/components/user/edit.evaluation.component.js" type="text/javascript"></script>
+        <script src="app/components/bundle/bundle.component.js" type="text/javascript"></script>
+        <script src="app/components/config/config.component.js" type="text/javascript"></script>
+        
+        <!-- services -->
+        <script src="app/shared/services/api.service.js" type="text/javascript"></script>
+        <script src="app/shared/services/authentication.service.js" type="text/javascript"></script>
+        <script src="app/shared/services/helper.factory.js" type="text/javascript"></script>
+        <script src="app/shared/services/evaluation.factory.js" type="text/javascript"></script>
+        <script src="app/shared/services/defaults.factory.js" type="text/javascript"></script>
+        <script src="app/shared/services/io.factory.js" type="text/javascript"></script>
+
+        <!-- directives -->
+        <!--<script src="app/shared/directives/navigation/scroll.directive.js" type="text/javascript"></script>-->
+        <script src="app/shared/directives/navigation/navigation.component.js" type="text/javascript"></script>
+        <script src="app/shared/directives/footer/footer.directive.js" type="text/javascript"></script>
+
+        <!-- Filters -->
+        <script src="app/shared/filters/props.filter.js" type="text/javascript"></script>
+
+        <!-- animations -->
+        <script src="app/shared/animations/slider.animation.js" type="text/javascript"></script>
+        
+    </body>
+</html>
+

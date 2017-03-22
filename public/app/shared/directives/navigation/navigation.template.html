@@ -1,0 +1,37 @@
+<header id="Header" class="blue-gradient">
+  <div class="Row-1">
+      <div class="Wrapper">
+          <div class="Group">
+              <h3 class="screen"><img src="/assets/img/visa.png" alt="VISA"> <small>Tools Portal</small></h3>
+              <h3 class="print"><img src="/assets/img/visa-blue.png" alt="VISA"> <small>Brand Central</small></h3>
+          </div>
+          <div class="UserLog">
+                <figure style="background-image: url(/assets/img/user.png)"></figure>
+               <p>
+                  <strong></strong><br>
+                   <span>
+                       <a ng-hide="vm.isLoggedIn" ng-link="['Login']" class="LogOut">Sign in </a> 
+                       <a ng-show="vm.isLoggedIn" ng-click="vm.logout()" class="LogOut" style="cursor: pointer;"> Logout </a>
+                   </span>
+              </p>
+          </div>
+      </div>
+  </div>
+  <div ng-show="vm.isLoggedIn" id="sticky-wrapper" class="sticky-wrapper" style="height: 45px;">
+    <div class="Row-2"> <!--ng-scroll-row-two-->
+      <div id="Menu">
+        <ul class="nav">
+          <li ng-click="vm.goToEvalPage()"><a><em class="fa fa-home"></em></a></li>
+
+          <li class="has-sub"><a style="cursor: pointer; margin-left: 20px;" ng-click="vm.goToEvalPage()">Home</a></li>
+
+          <li class="has-sub"><a ng-link="['EmailListCreate']" style="cursor: pointer; margin-left: 5px;" id='create_nav'>Create Evaluation</a></li>
+          
+          <li class="has-sub"><a ng-link="['Archive']" style="cursor: pointer; margin-left: 5px;" id="archive_nav">Archive</a></li>
+
+        </ul> 
+      </div>
+    </div>
+  </div>
+
+</header>

@@ -1,0 +1,76 @@
+<navigation></navigation>
+
+<div class="container" style="padding-top: 140px;">
+    <form enctype="multipart/form-data">
+        <toast></toast>
+        <div class="row">
+            <md-content>
+                <br>
+                <md-toolbar class="md-hue-2" >
+                    <div class="md-toolbar-tools">
+                      <h2 style="margin: auto;">
+                        <span>Send a Notification</span>
+                      </h2>
+                      <span flex></span>
+                    </div>
+                </md-toolbar>
+                <br>
+                <!--
+                <md-input-container class="md-icon-float md-block">
+                    <label>Vendor Name</label>
+                    <input ng-model="vm.vendor_name" type="text">
+                </md-input-container>
+                -->
+
+                <div class="email_container" style="position: relative; bottom: .7em;">
+                    <label class="email_label" for="email_form">Users </label>
+                    <ui-select id="email_form" class="email_form" multiple tagging="vm.tagTransform" tagging-tokens="SPACE|,|/" ng-model="vm.evaluator_emails" ng-disabled="vm.disabled" title="Enter Emails">
+                        <ui-select-match >{{$item.email}}</ui-select-match>
+                        <ui-select-choices repeat="item in vm.available_evaluator_emails">
+                            <small>
+                                email: {{item.email}}
+                            </small>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+
+                <md-input-container class="md-block">
+                    <label>Email Subject</label>
+                    <input ng-model="vm.email_subject" type="text">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Email Body</label>
+                    <textarea ng-model="vm.email_body" rows="15" md-select-on-focus></textarea>
+                </md-input-container>
+                
+                <!--
+                <label style="color: rgba(0,0,0,0.54); font-size: 13px; margin-bottom: 8px;">Evaluator Email: </label>
+                <ui-select multiple tagging="vm.tagTransform" tagging-tokens="SPACE|,|/" ng-model="vm.evaluator_emails" ng-disabled="vm.disabled" title="Enter Emails">
+                    <ui-select-match placeholder="Enter emails">{{$item.email}}</ui-select-match>
+                    <ui-select-choices repeat="item in vm.evaluator_emails">
+                        <small>
+                            email: {{item.email}}
+                        </small>
+                    </ui-select-choices>
+                </ui-select>
+                <br>
+                <div class=".border-space-ver-1">
+                    <label style="color: rgba(0,0,0,0.54); font-size: 13px; margin-bottom: 8px;">Finance Email: </label>
+                    <ui-select multiple tagging="vm.tagTransform" tagging-tokens="SPACE|,|/" ng-model="vm.finance_emails" ng-disabled="vm.disabled" title="Enter Emails">
+                        <ui-select-match placeholder="Enter emails">{{$item.email}}</ui-select-match>
+                        <ui-select-choices repeat="item in vm.finance_emails">
+                            <small>
+                                email: {{item.email}}
+                            </small>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                -->
+
+                <md-button style="margin-left: 0px;" class="md-raised" ng-click="vm.sendMessage()">Send Message</md-button>
+            </md-content>
+        </div>
+    </form>
+</div>
+

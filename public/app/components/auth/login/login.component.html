@@ -1,0 +1,35 @@
+<navigation></navigation>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <md-content>
+        <br>
+        <md-toolbar class="md-hue-2" >
+          <div class="md-toolbar-tools">
+            <h2 style="margin: 0em 6em;">
+              <span>Welcome to Tools Evaluation!</span>
+            </h2>
+            <span flex></span>
+          </div>
+        </md-toolbar>
+        <br>
+        <md-input-container class="md-icon-float md-block">
+          <!-- Use floating label instead of placeholder -->
+          <label>Username</label>
+          <md-icon md-svg-src="assets/img/ic_person_black_24px.svg" class="name"></md-icon>
+          <input ng-model="vm.credentials.username" type="text" autocomplete="off">
+        </md-input-container>
+        <md-input-container md-no-float class="md-icon-float md-block">
+          <!-- Use floating label instead of placeholder -->
+          <label>Password</label>
+          <md-icon md-svg-src="assets/img/ic_lock_open_black_24px.svg"></md-icon>
+          <input ng-model="vm.credentials.password" type="password" autocomplete="off">
+        </md-input-container>
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+          <md-button class="md-raised md-primary" ng-click="vm.onSubmit()">Sign In</md-button>
+        </section>
+      </md-content>
+    </div>
+  </div>
+</div>

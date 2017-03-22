@@ -1,0 +1,26 @@
+<navigation></navigation>
+
+<div class="container">
+
+  <!-- Current Design-->
+  <div class="row" ng-repeat="group in vm.bundle_groups">
+    <div class="card_group">
+      <section class="tool_card" ng-repeat="eval in group">
+        <div class="pic_container">
+          <img ng-src="{{ vm.picture_paths[eval.img_id] }}" class="md-card-image" alt="Washed Out">
+        </div>
+
+        <div class="tool_title"> {{eval.vendor_name}} </div>
+        <md-card-actions layout="column" layout-align="start">
+          <!--<md-button ng-click="vm.sendEvaluations(eval._id)">Review</md-button>-->
+          <md-button ng-click="vm.sendMessage(eval._id)">Send Message</md-button>
+          <md-button ng-click="vm.goToBundle(eval._id)">Reports</md-button>
+          <!--<md-button ng-click="vm.goToConfig(eval._id)">Config</md-button>-->
+        </md-card-actions>
+      </section>
+    </div>
+  </div>
+
+</div>
+
+

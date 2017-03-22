@@ -1,0 +1,179 @@
+//Uploading file
+http://stackoverflow.com/questions/33062815/upload-file-using-ng-file-upload-and-mongo-gridfs
+http://stackoverflow.com/questions/34576507/storing-a-file-into-mongodb-using-multer-in-mongoose
+http://stackoverflow.com/questions/3413115/is-gridfs-fast-and-reliable-enough-for-production
+http://excellencenodejsblog.com/expressjs-file-uploading-gridfs-mongodb/
+http://stackoverflow.com/questions/31496100/cannot-app-usemulter-requires-middleware-function-error
+https://www.npmjs.com/package/gridfs-uploader
+
+//gridfs-stream documentation
+https://github.com/aheckmann/gridfs-stream
+
+//example of uploading multiple files 
+http://stackoverflow.com/questions/27157565/mongoerror-when-uploading-a-file-using-mongoose-gridfs-stream-and-multer
+
+//downloading a file
+http://stackoverflow.com/questions/11944932/how-to-download-a-file-with-node-js-without-using-third-party-libraries
+http://stackoverflow.com/questions/21628378/angularjs-display-blob-pdf-in-an-angular-app
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Sending_and_Receiving_Binary_Data
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType
+
+//Opening files
+http://stackoverflow.com/questions/18839048/how-to-read-a-file-in-angularjs
+http://stackoverflow.com/questions/16514509/how-do-you-serve-a-file-for-download-with-angularjs-or-javascript
+http://stackoverflow.com/questions/25781927/how-to-read-pdf-stream-in-angularjs
+http://stackoverflow.com/questions/17177303/spring-download-response-as-a-file
+http://stackoverflow.com/questions/3499597/javascript-jquery-to-download-file-via-post-with-json-data/
+http://stackoverflow.com/questions/14682556/why-threre-is-no-way-to-download-file-using-ajax-request
+http://notjoshmiller.com/server-side-pdf-generation-and-angular-resource/
+
+//Only add multer to routes that need it, look at bottom of solution for link on this:
+http://stackoverflow.com/questions/27157565/mongoerror-when-uploading-a-file-using-mongoose-gridfs-stream-and-multer
+http://lollyrock.com/articles/express4-file-upload/
+
+//mean.js structure
+http://www.logicmanialab.com/2015/01/mean-js-application-structure.html
+https://scotch.io/tutorials/node-and-angular-to-do-app-application-organization-and-structure
+https://scotch.io/tutorials/angularjs-best-practices-directory-structure
+
+//Sending Emails
+http://stackoverflow.com/questions/31473292/etimedout-connect-error-using-nodemailer-in-nodejs-openshift-application
+http://javascript.tutorialhorizon.com/2015/07/02/send-email-node-js-express/
+http://stackoverflow.com/questions/29099582/sending-emails-with-nodemailer
+http://stackoverflow.com/questions/32876788/nodemailer-without-gmail
+http://stackoverflow.com/questions/16943961/sending-mail-with-nodemailer-email-from-field-incorrect
+https://github.com/nodemailer/nodemailer
+
+//javascript callbacks tutorials and explanations
+http://stackoverflow.com/questions/19442829/how-can-we-access-variable-from-callback-function-in-node-js
+http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/
+
+//UX/UI sites
+http://www.fastcodesign.com/1672597/11-rules-for-great-ux-design-adapted-from-an-original-mad-man
+http://www.uxmatters.com/mt/archives/2014/11/fundamental-principles-of-great-ux-design-how-to-deliver-great-ux-design.php
+https://medium.com/@erikdkennedy/7-rules-for-creating-gorgeous-ui-part-1-559d4e805cda#.dzm8frty5
+https://www.elegantthemes.com/blog/resources/10-rules-of-good-ui-design-to-follow-on-every-web-design-project
+http://noeticforce.com/best-material-design-web-frameworks
+
+//Todo list
+-only use multex middleware on routes that needed (look at above 2 links)
+
+//VISA intern challenge links
+http://universalfreepress.com/2015/banks-working-with-government-to-get-rid-of-cash/
+
+//Repo learning site
+https://github.com/sitepoint-editors
+
+//Authentication/authorization
+https://www.sitepoint.com/user-authentication-mean-stack/
+http://stackoverflow.com/questions/21883521/node-js-express-js-jwt-always-returns-an-invalid-token-error-in-browser-respon
+http://code.tutsplus.com/tutorials/token-based-authentication-with-angularjs-nodejs--cms-22543
+https://angular.github.io/router/lifecycle
+
+//Mockup
+https://oscgonza.mybalsamiq.com
+
+//Obligation (compliance training) DUE: 7/29
+https://visa.plateau.com/learning/user/ssoLogin.do
+
+//Tutorial to amp up skills
+http://www.tutorialspoint.com/mongodb/mongodb_capped_collections.htm
+
+
+//problems wih favicon.ico  ---> Came from unauthoriezed access errors in server main.route.js file
+static.js VDP/web_portal/node_modules/mongoose/
+if(req.url === '/favicon.ico')
+
+//query multiple items in a list
+http://stackoverflow.com/questions/26498284/is-there-a-way-to-query-mongodb-rest-api-with-a-list-or-array-of-ids
+http://stackoverflow.com/questions/10266512/how-can-i-save-multiple-documents-concurrently-in-mongoose-node-js
+http://stackoverflow.com/questions/16882938/how-to-check-if-that-data-already-exist-in-the-database-during-update-mongoose
+
+//check if item exists in DB
+http://stackoverflow.com/questions/25232423/mongo-mongoose-check-if-an-item-exists
+
+//lock a db
+http://stackoverflow.com/questions/37619391/locks-in-mongo-and-nodejs
+
+//passing in extra paramater to asychronous nature of javascript
+http://stackoverflow.com/questions/16878155/is-it-possible-to-pass-an-extra-parameter-to-a-mongoose-update-callback
+
+//socket.io troubleshoots
+https://github.com/socketio/socket.io-client/issues/641
+
+//socketio tutorials/examples
+http://www.html5rocks.com/en/tutorials/frameworks/angular-websockets/
+https://docs.strongloop.com/display/MSG/Building+a+real-time+app+using+socket.io+and+AngularJS
+
+//ideas for date
+http://www.sfgate.com/local/article/18-of-the-Bay-Area-s-best-first-date-spots-6371394.php#photo-2414904
+
+//R studio
+
+//Material Design
+https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#safe=active&q=material+design+cards+templates+angular
+https://wrapbootstrap.com/theme/material-admin-responsive-dark-skin-WB011H985
+http://materialdesignblog.com/themes-templates/
+//Buy a template!!--------------------------------------
+
+https://material.angularjs.org/latest/demo/card
+
+
+//Phantomjs
+http://phantomjs.org/download.html
+https://github.com/Medium/phantomjs/issues/435
+https://github.com/marcbachmann/node-html-pdf/issues/35
+https://github.com/marcbachmann/node-html-pdf/issues/124
+
+
+//////////////////////////////P1 Plans//////////////////////////////////////////////////////
+GSETOOLs
+visa-toosui-atsdashboard/atsnode.js line 53 and forward (module ldapjs)
+
+single sign on
+admin privelage (specify on the database)
+-can create form for vendor
+-file upload
+-file retrieve
+
+database - 2 versions of evaluation one for the admin and one for the users.
+-He showed me how to do the single user authentication
+-We talked about the admin design (List of vendors/ add vendor) click on a vendor item (add users/show vendor details)
+-
+
+//Brian investing
+-Profile slicer
+-another program??
+
+//Songs
+By my side
+People fall in love in mysterious ways
+
+//Notes 6/30 meetup with harshit
+1. Admin
+-Create form for the Vendor (separate row in db)
+-Add Users who can access the form above specific to Vendor (in separate page, add users in vendor page)
+-Form (Fields)
+-History line of all the sumbmissions that have been made (Vendor Page with past modifications)
+-Options to send to certain group(Evaluator, Finance, management)
+
+Table storing everyone's evaluation ID'd by vendor, should store admins as well.
+
+Create Tab and Review tab with history line
+
+
+
+*Authentication
+
+
+HR button should only appear after round one of creating the form.
+
+
+
+
+//TODO
+1.put all secrets on a config file
+2.delete registration code and remnants
+3.delete vendor model and remnants
+4.cleanup db.js (upload/get files)
+5.Delete authentication indexes/folder in app routes

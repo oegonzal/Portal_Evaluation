@@ -1,0 +1,238 @@
+<navigation></navigation>
+
+
+<style>
+  md-content {
+    background-color: #f5f5f5 !important;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    text-decoration: none;
+    color: rgb(33,150,243);
+  }
+  a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  input::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.26);
+    font-weight: 300;
+  }
+  input::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.26);
+    font-weight: 300;
+  }
+  input:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.26);
+    font-weight: 300;
+  }
+  input::input-placeholder {
+    color: rgba(0, 0, 0, 0.26);
+    font-weight: 300;
+  }
+  .material-icons {
+    position: static;
+    margin: 0;
+  }
+  md-toolbar,
+  footer-content {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  footer {
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+  }
+  footer > footer-content {
+    min-height: 64px;
+    padding: 0 16px 16px;
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+  }
+  footer > footer-content > div {
+    margin-top: 16px;
+  }
+  footer > footer-content > div:not(:last-child) {
+    margin-right: 24px;
+  }
+  footer > footer-content > div > *:not(span) + *:not(span) {
+    margin-left: 24px;
+  }
+  md-card {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    position: relative;
+  }
+  md-toolbar.md-table-toolbar.ng-hide {
+    display: none;
+  }
+  md-toolbar.md-table-toolbar.alternate .md-toolbar-tools {
+    color: #1e88e5;
+    font-size: 16px;
+    background-color: #e3f2fd;
+  }
+  md-toolbar.md-table-toolbar form {
+    margin-left: 16px;
+  }
+  md-toolbar.md-table-toolbar form > input {
+    width: 100%;
+    margin: 0;
+    border: none;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  md-toolbar.md-table-toolbar form > input:focus {
+    outline: none;
+  }
+  md-dialog > md-dialog-content.md-dialog-content {
+    padding-bottom: 0;
+  }
+  md-dialog > md-dialog-content > p {
+    margin: 16px 0;
+    color: rgba(0, 0, 0, 0.54);
+    line-height: 22px;
+  }
+  md-dialog > md-dialog-content > p.md-warn {
+    color: #f44336;
+  }
+  md-dialog > md-dialog-content > form:last-child > md-input-container:last-child {
+    padding-bottom: 0;
+  }
+  md-dialog > .md-actions > .md-button {
+    min-width: 60px;
+  }
+  md-dialog[delete-dialog] {
+    max-width: 300px;
+  }
+  md-dialog[add-item-dialog] > md-dialog-content > form > .input-row {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  md-dialog[add-item-dialog] > md-dialog-content > form > .input-row > md-input-container {
+    min-width: 120px;
+  }
+
+  @font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(material-design-icons/MaterialIcons-Regular.woff2) format('woff2'), url(material-design-icons/MaterialIcons-Regular.woff) format('woff'), url(material-design-icons/MaterialIcons-Regular.ttf) format('truetype');
+  }
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    height: 24px;
+    width: 24px;
+    font-size: 24px;
+    color: inherit;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-feature-settings: 'liga';
+            font-feature-settings: 'liga';
+  }
+  .material-icons.md-18 {
+    height: 18px;
+    width: 18px;
+    font-size: 18px;
+  }
+  .material-icons.md-36 {
+    height: 36px;
+    width: 36px;
+    font-size: 36px;
+  }
+  .material-icons.md-48 {
+    height: 48px;
+    width: 48px;
+    font-size: 48px;
+  }
+  .material-icons.md-dark {
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .material-icons.md-light {
+    color: #ffffff;
+  }
+
+  /*
+  tr td:first-child { 
+      display: none;
+  }
+
+  tr th:first-child { 
+      display: none;
+  }
+  */
+
+</style>
+
+
+<div class="container" style="padding-top: 140px;">
+	<div class="row">
+
+		<md-toolbar layout="row" class="md-hue-2">
+		    <div class="md-toolbar-tools">
+		      <span>Archive</span>
+		    </div>
+		</md-toolbar>
+	</div>
+
+	<div class="row">
+
+		<md-toolbar class="md-table-toolbar md-default" ng-hide="selected.length || filter.show">
+      <div class="md-toolbar-tools">
+        <h2 class="md-title">Bundle Lookup</h2>
+        <div flex></div>
+        <md-button class="md-icon-button" ng-click="filter.show = true">
+          <img src="/assets/img/ic_filter_list_black_24dp_1x.png" title="Filter"/>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-toolbar class="md-table-toolbar md-default" ng-show="filter.show && !selected.length"> 
+      <div class="md-toolbar-tools">
+        <img src="/assets/img/ic_search_black_24dp_1x.png" title="Search"/>
+        <form flex name="filter.form">
+          <input type="text" ng-model="query.filter" ng-model-options="filter.options" placeholder="search">
+        </form>
+        <md-button class="md-icon-button" ng-click="removeFilter()">
+          <img src="/assets/img/ic_close_black_24dp_1x.png" title="Close"/>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <!-- col-md-10 -->
+    <md-table-container class=""> 
+      <table md-table md-row-select multiple="false" ng-model="selected" md-progress="promise">
+        <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+          <tr md-row>
+            <th md-column md-order-by="nameToLower">Bundle</th>
+            <th md-column md-order-by="nameToLower">Date Created</th>
+            <th md-column md-order-by="nameToLower">Date Archived</th>
+          </tr>
+        </thead>
+
+        <!--Still need Duration, summary, Categ, App_list-->
+        <tbody md-body> <!--  md-select="dessert" md-select-id="name"   -->
+          <tr md-row ng-disabled="false" md-on-select="crqSelected" md-select="dessert" md-select-id="CRQ" md-auto-select ng-repeat="dessert in desserts | filter:{vendor_name: query.filter}">
+            <td md-cell>{{dessert.vendor_name }} </td>
+            <td md-cell> September 1, 2016 </td>
+            <td md-cell> September 1, 2016 </td>
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+    
+
+    <md-table-pagination md-limit="query.limit" md-limit-options="query.listings_per_page_options" md-page="query.page" md-total="200" md-on-paginate="getPageOfData" md-page-select></md-table-pagination>
+
+    <md-button class="md-raised" ng-click="vm.viewBundle()">View</md-button>
+    <md-button class="md-raised" style="background-color: #d9534f;" ng-click=""><span style="opacity: 0.8; color: white; font-weight: 600;">Delete Bundle</span></md-button>
+
+	</div>
+</div>

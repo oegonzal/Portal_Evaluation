@@ -1,0 +1,209 @@
+<navigation></navigation>
+
+<div class="container" style="padding-top: 140px;">
+	<toast></toast>
+	<md-content style="display: inline;">
+      <md-toolbar class="md-hue-2" >
+        <div class="md-toolbar-tools">
+          <h2 style="margin: auto;">
+            <span>Report</span>
+          </h2>
+          <span flex></span>
+        </div>
+      </md-toolbar>
+     </md-content>
+
+    <div ng-show="vm.isFullReport">
+		<label class="email_label" for="email_form">Emails </label>
+		<ui-select id="email_form" class="email_form" multiple tagging="vm.tagTransform" tagging-tokens="SPACE|,|/" ng-model="vm.management_emails" ng-disabled="vm.disabled">
+	      <ui-select-match >{{$item.email}}</ui-select-match>
+	      <ui-select-choices repeat="item in vm.available_management_emails">
+	          <small>
+	              email: {{item.email}}
+	          </small>
+	      </ui-select-choices>
+		</ui-select>
+
+		<md-button class="md-raised" style="margin-left: 0px; margin-top: 15px;" ng-click="vm.generateBundlePackageInBackend()">Submit Report</md-button>
+	</div>
+
+	<div id="html_to_pdf">
+		<div class="summary_container" ng-repeat="eval in vm.bundle"> 
+
+			<table class="summary_table" style="height: 40px;">
+				<tr><th style="background-color:#AEB3B5; text-align: center;" class="summary_table_header_font">{{eval.user}}</th></tr>
+			</table>
+
+			<table class="summary_table">
+				<tr><th style="background-color:#CBCBCB; text-align: center;" class="summary_table_header_font">Vendor's Information</th></tr>
+			</table>
+			<table class="summary_table" align="center">
+				<tr class="summary_fields">
+					<td>Full Name</td>
+					<td>Sub Division</td>
+					<td>Manager</td>
+					<td>Nominating Manager</td>
+				</tr>
+				<tr>
+					<td>{{eval.name}}</td>
+					<td>{{eval.sub_direction}}</td>
+					<td>{{eval.manager}}</td>
+					<td>{{eval.nominating_manager}}</td>
+				</tr>
+				<tr class="top_border summary_fields">
+					<td>Vendor's Title</td>
+					<td>Vendor's Age</td>
+					<td>Years in Market</td>
+					<td>Years of Industry Experience</td>
+				</tr>
+				<tr>
+					<td>{{eval.vendor_title}}</td>
+					<td>{{eval.vendor_age}}</td>
+					<td>{{eval.years_in_market}}</td>
+					<td>{{eval.years_in_industry}}</td>
+				</tr>
+				<tr class="top_border summary_fields">
+					<td>Features</td>
+					<td>Team Size</td>
+					<td>Total Competitors</td>
+					<td>Location</td>
+				</tr>
+				<tr>
+					<td>{{eval.features}}</td>
+					<td>{{eval.team_size}}</td>
+					<td>{{eval.total_competitors}}</td>
+					<td>{{eval.location}}</td>
+				</tr>
+			</table>
+
+			<table class="summary_table">
+				<tr><th style="background-color:#CBCBCB; text-align: center;" class="summary_table_header_font">Work History</th></tr>
+			</table>
+			<table class="summary_table">
+				<tr> 
+					<th></th>
+					<th>Company</th>
+					<th>From - To</th>
+					<th>Role</th>
+				</tr>
+				<tr ng-repeat="item in eval.history_list track by $index">
+					<td> {{$index + 1}}. </td>
+					<td> {{item.company_history}}</td>
+					<td> {{item.from_to_dates}}</td>
+					<td> {{item.product_role}}</td>
+				</tr>
+			</table>
+
+			<table class="summary_table">
+				<tr><th style="background-color:#CBCBCB; text-align: center;" class="summary_table_header_font">Ratings</th></tr>
+			</table>
+			<table class="summary_table">
+				<tr> 
+					<th>2016 Expected Rating</th>
+					<th>2015 Year-End Rating</th>
+					<th>2014 Year-End Rating</th>
+					<th>2013 Year-End Rating</th>
+				</tr>
+				<tr>
+					<td>{{eval.last_1_year_rating}}</td>
+					<td>{{eval.last_2_year_rating}}</td>
+					<td>{{eval.last_3_year_rating}}</td>
+					<td>{{eval.last_4_year_rating}}</td>
+				</tr>
+			</table>
+
+			<table class="summary_table">
+				<tr><th style="background-color:#CBCBCB; text-align: center;" class="summary_table_header_font">Written Recommendation</th></tr>
+			</table>
+			<table class="summary_table">
+				<tr> 
+					<th>Current Scope</th>
+				</tr>
+				<tr>
+					<td>{{eval.current_scope_of_works}}</td>
+				</tr>
+				<tr> 
+					<th>Proposed Features</th>
+				</tr>
+				<tr>
+					<td>{{eval.proposed_work_mapping}}</td>
+				</tr>
+			</table>
+
+			<table class="summary_table">
+				<tr><th style="background-color:#CBCBCB; text-align: center;" class="summary_table_header_font">Detailed Information</th></tr>
+			</table>
+			<table class="summary_table">
+				<tr> 
+					<th>Key Features</th>
+				</tr>
+				<tr>
+					<td>{{eval.key_factors}}</td>
+				</tr>
+				<tr> 
+					<th>Best Clients</th>
+				</tr>
+				<tr>
+					<td>{{eval.key_factors}}</td>
+				</tr>
+				<tr> 
+					<th>Features that differentiate this vendor from other Vendors</th>
+				</tr>
+				<tr>
+					<td>{{eval.differentiating_factors}}</td>
+				</tr>
+				<tr> 
+					<th> Summary of endorsers comments on this Vendor's support</th>
+				</tr>
+				<tr>
+					<td>{{eval.endorsers_comments}}</td>
+				</tr>
+			</table>
+			<table class="summary_table_no_margin">
+				<tr> 
+					<th></th>
+					<th>List of significant strengths and development needs that this Vendor exhibits / should strive to improve upon</th>
+				</tr>
+				<tr class="summary_fields">
+					<td></td>
+					<td style="text-align: center;">Strengths</td>
+				</tr>
+				<tr ng-repeat="item in eval.strengths track by $index">
+					<td>{{$index + 1}}.</td>
+					<td> {{ item }} </td>
+				</tr>
+				<tr class="summary_fields">
+					<td></td>
+					<td style="text-align: center;">Developments Needs</td>
+				</tr>
+				<tr ng-repeat="item in eval.weaknesses track by $index">
+					<td> {{$index + 1}}.</td>
+					<td> {{ item }} </td>
+				</tr>
+			</table>
+
+			<table class="summary_table">
+				<tr><th style="background-color:#CBCBCB; text-align: center;" class="summary_table_header_font">Endorser Details</th></tr>
+			</table>
+			<table class="summary_table">
+				<tr class="summary_fields">
+					<td></td>
+					<td>Name</td>
+					<td>Title</td>
+					<td>Sub Function</td>
+				</tr>
+				<tr ng-repeat="item in eval.endorsers_detail_list track by $index">
+					<td> {{$index + 1}}.</td>
+					<td> {{item.endorsers_name}}</td>
+					<td> {{item.endorsers_title}}</td>
+					<td> {{item.sub_function}}</td>
+				</tr>
+			</table>
+			<br>
+			<br>
+			<hr ng-if="$index != vm.bundle.length - 1" style="border-top: 3px solid #aaa; width: 80%; margin: 0 auto; ">
+		</div>
+	</div>
+
+	<md-button class="md-raised" ng-click="vm.sendUserAMessage()">Send Message</md-button>
+</div>

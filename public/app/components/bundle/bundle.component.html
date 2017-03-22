@@ -1,0 +1,55 @@
+<navigation></navigation>
+
+<div class="container" style="padding-top: 140px;">
+  <md-toolbar layout="row" class="md-hue-2">
+    <div class="md-toolbar-tools">
+      <span>Bundle</span>
+    </div>
+  </md-toolbar>
+  <div style="padding-top: 10px; width: 50%; float: left;">
+    <md-content>
+    
+      <md-list ng-repeat="eval in vm.bundle.evaluations" flex>
+        <md-subheader class="md-no-sticky">Evaluation</md-subheader>
+        <md-list-item class="md-3-line" ng-click="vm.goToEvaluation(eval.eval)">
+          <img ng-src="{{vm.imagePathForEval}}" class="md-avatar" alt="Download" />
+          <div class="md-list-item-text" layout="column">
+            <h3>Evaluation</h3>
+            <h4>{{eval.user}}</h4>
+            <p>Status: {{eval.status}}</p>
+          </div>
+        </md-list-item>
+        <md-subheader ng-if="eval.file_list.length > 0" class="md-no-sticky">Supporting Files</md-subheader>
+        <md-list-item class="md-2-line" ng-repeat="file in eval.file_list" ng-click="vm.getFile(file.file_id)">
+          <img ng-src="{{vm.imagePathForDownload}}" class="md-avatar" alt="Download" />
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ file.uploaded_by }}</h3>
+            <p>{{ file.file_name }}</p>
+          </div>
+        </md-list-item>
+        <md-divider ></md-divider>
+      </md-list>
+      
+    </md-content>
+  </div>
+  <div style="padding-top: 10px; width: 50%; float: right; overflow:auto;">
+    <!--
+    <md-content>
+      <label style="color: rgba(0,0,0,0.54); font-size: 13px; margin-bottom: 8px;">Management Emails: </label>
+      <ui-select multiple tagging="vm.tagTransform" tagging-tokens="SPACE|,|/" ng-model="vm.management_emails" ng-disabled="vm.disabled">
+          <ui-select-match placeholder="Enter emails">{{$item.email}}</ui-select-match>
+          <ui-select-choices repeat="item in vm.evaluator_emails">
+              <small>
+                  email: {{item.email}}
+              </small>
+          </ui-select-choices>
+      </ui-select>
+      -->
+      <br>
+      <md-button style="margin-left: 20px;" class="md-raised" ng-click="vm.bundlePackages()">Bundle Packages</md-button>
+      <md-button style="margin-left: 20px;" class="md-raised" ng-click="vm.goToConfig()">Config</md-button>
+      <br>
+    </md-content>
+  </div>
+
+</div>

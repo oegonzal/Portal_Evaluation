@@ -1,0 +1,375 @@
+<navigation></navigation>
+
+<div class="container" style="padding-top: 140px; padding-left: 0px; padding-right: 0px;" ng-class="{'dim_outt': !vm.disable}">
+    <form ng-submit="vm.submit()" enctype="multipart/form-data">
+        <toast style="width: 100%;"></toast>
+        <div class="row">
+          <md-content>
+          <md-toolbar class="md-hue-2" >
+            <div class="md-toolbar-tools">
+              <h2 style="margin: auto;">
+                <span> {{ vm.headers[vm.currentPageIndex - 1] }} </span>
+              </h2>
+              <span flex></span>
+              <md-button class="md-icon-button" aria-label="image" ng-click="vm.saveChanges()">
+                  <md-icon md-svg-icon="assets/img/ic_save_black_24px.svg"></md-icon>
+              </md-button>
+              <md-button ng-disabled="vm.currentPageIndex == 1" class="md-icon-button" aria-label="image" ng-click="vm.updatePageToPrevious()">
+                  <md-icon md-svg-icon="assets/img/ic_navigate_before_black_24px.svg"></md-icon>
+              </md-button>
+              <md-button ng-disabled="vm.currentPageIndex == vm.NUM_OF_PAGES" class="md-icon-button" aria-label="image" ng-click="vm.updatePageToNext()">
+                <md-icon md-svg-icon="assets/img/ic_navigate_next_black_24px.svg"></md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+          
+          <uib-progressbar style="height: 7px; border-radius: 0px; background-color: #f5f5f5;" value="vm.progress_bar"></uib-progressbar>
+          </md-content>
+        </div>
+
+
+        <!--Page 1-->
+        <div ng-show="vm.showPage(1)">
+            <div class="row">
+              <md-content>
+                <md-list flex>
+                  <md-list-item class="md-2-line" ng-repeat="file in vm.file_list" ng-click="vm.getFile(file.file_id)">
+                    <img src="assets/img/download.blue.jpg" class="md-avatar" alt="Download" />
+                    <div class="md-list-item-text" layout="column">
+                      <h3>{{ file.file_name }}</h3>
+                    </div>
+                  </md-list-item>
+                  <md-list-item class="md-2-line" ng-repeat="file in vm.files" ng-click="">
+                    <img src="assets/img/upload.png" class="md-avatar" alt="Upload" />
+                    <div class="md-list-item-text" layout="column">
+                      <h3>{{ file.name}}</h3>
+                    </div>
+                  </md-list-item>
+                  <md-divider ></md-divider>
+                </md-list>
+                <div class="" style="margin-bottom: 26px;">
+                    <label style="color: rgba(0,0,0,0.54); font-size: 13px; margin-bottom: 8px;">Supporting Document</label>
+                    <input type="file" name='file' ngf-select ng-model="vm.files" multiple />
+                    <!--<button ngf-select >upload file</button>-->
+                  </div>
+                  <md-button style="margin-left: 0px;" class="md-raised" ng-click="vm.updatePageToNext()">Next</md-button>
+              </md-content>
+            </div>
+        </div>
+
+
+        <!--Page 2-->
+        <div ng-show="vm.showPage(2)" class="">
+            <div class="row">
+                <md-content>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Full Name</label>
+                    <input ng-model="vm.name" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Sub Division</label>
+                    <input ng-model="vm.sub_direction" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Manager</label>
+                    <input ng-model="vm.manager" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Nominating Manager</label>
+                    <input ng-model="vm.nominating_manager" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Title</label>
+                    <input ng-model="vm.vendor_title" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Age</label>
+                    <input ng-model="vm.vendor_age" type="text">
+                  </md-input-container>
+                  <md-button class="md-raised" ng-click="vm.updatePageToPrevious()">Back</md-button>
+                  <md-button class="md-raised" ng-click="vm.updatePageToNext()">Next</md-button>
+              </md-content>
+            </div>
+        </div>
+
+        
+        <!--Page 3-->
+        <div ng-show="vm.showPage(3)" class="">
+            <div class="row">
+                <md-content>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Years in Market</label>
+                    <input ng-model="vm.years_in_market" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Years in Industry</label>
+                    <input ng-model="vm.years_in_industry" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Features</label>
+                    <input ng-model="vm.features" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Team Size</label>
+                    <input ng-model="vm.team_size" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Total Competitors</label>
+                    <input ng-model="vm.total_competitors" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Location</label>
+                    <input ng-model="vm.location" type="text">
+                  </md-input-container>
+                  <md-button class="md-raised" ng-click="vm.updatePageToPrevious()">Back</md-button>
+                  <md-button class="md-raised" ng-click="vm.updatePageToNext()">Next</md-button>
+                </md-content>
+            </div>
+        </div>
+
+
+        <!--Page 4-->
+        <div class="container" ng-show="vm.showPage(4)">
+            <div class="row">
+                <md-content>
+                  <div class="border-space-ver-1 " ng-repeat="item in vm.history_list track by $index">
+
+                      <md-toolbar>
+                        <div class="md-toolbar-tools">
+                          <h2 style="margin: auto;">
+                            <span>History {{$index + 1}}</span>
+                          </h2>
+                          <span flex></span>
+                          <md-button class="md-icon-button" aria-label="Favorite" ng-click="vm.removeVendorWorkHistoryItem($index, vm.history_list)">
+                            <md-icon md-svg-icon="assets/img/ic_remove_black_24px.svg"></md-icon>
+                          </md-button>
+                        </div>
+                      </md-toolbar>
+                      <br>
+                      <md-input-container class="md-icon-float md-block">
+                        <!-- Use floating label instead of placeholder -->
+                        <label>Company</label>
+                        <input ng-model="vm.history_list[$index].company_history" type="text">
+                      </md-input-container>
+                      <md-input-container class="md-icon-float md-block">
+                        <!-- Use floating label instead of placeholder -->
+                        <label>From-To Dates (06/11/2009 - 03/8/2013)</label>
+                        <input ng-model="vm.history_list[$index].from_to_dates" type="text">
+                      </md-input-container>
+                      <md-input-container class="md-icon-float md-block">
+                        <!-- Use floating label instead of placeholder -->
+                        <label>Product Role</label>
+                        <input ng-model="vm.history_list[$index].product_role" type="text">
+                      </md-input-container>
+                  </div>
+                  
+                  <md-button class="md-raised" ng-click="vm.updatePageToPrevious()">Back</md-button>
+                  <md-button class="md-raised" ng-click="vm.updatePageToNext()">Next</md-button>
+                  <md-button class="md-raised" ng-click="vm.addVendorWorkHistoryItem(vm.history_list)" style="float: right;">Add Item</md-button>
+                </md-content>
+            </div>
+        </div>
+
+
+        <!--Page 5-->
+        <div class="container" ng-show="vm.showPage(5)">
+            <div class="row">
+                <md-content>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Last Year's Rating</label>
+                    <input ng-model="vm.last_1_year_rating" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Last 2 Year's Ago Rating</label>
+                    <input ng-model="vm.last_2_year_rating" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Last 3 Year's Ago Rating</label>
+                    <input ng-model="vm.last_3_year_rating" type="text">
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block">
+                    <!-- Use floating label instead of placeholder -->
+                    <label>Last 4 Year's Ago Rating</label>
+                    <input ng-model="vm.last_4_year_rating" type="text">
+                  </md-input-container>
+                  <md-button class="md-raised" ng-click="vm.updatePageToPrevious()">Back</md-button>
+                  <md-button class="md-raised" ng-click="vm.updatePageToNext()">Next</md-button>
+                </md-content>
+            </div>
+        </div>
+
+
+        <!--Page 6-->
+        <div class="container" ng-show="vm.showPage(6)">
+            <div class="row">
+                <md-content>
+                  <md-input-container class="md-block">
+                      <label>Current Scope of Works</label>
+                      <textarea ng-model="vm.current_scope_of_works" rows="15" md-select-on-focus></textarea>
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                      <label>Proposed Work Mapping</label>
+                      <textarea ng-model="vm.proposed_work_mapping" rows="15" md-select-on-focus></textarea>
+                  </md-input-container>
+                  <md-button class="md-raised" ng-click="vm.updatePageToPrevious()">Back</md-button>
+                  <md-button class="md-raised" ng-click="vm.updatePageToNext()">Next</md-button>
+                </md-content>
+            </div>
+        </div>
+
+
+        <!--Page 7-->
+        <div class="container" ng-show="vm.showPage(7)">
+            <div class="row">
+                <md-content>
+                  <md-input-container class="md-block">
+                      <label>Key Features</label>
+                      <textarea ng-model="vm.key_factors" rows="15" md-select-on-focus></textarea>
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                      <label>Best Clients</label>
+                      <textarea ng-model="vm.best_clients" rows="15" md-select-on-focus></textarea>
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                      <label>Features That Differentiate This Vendor From Other Vendors</label>
+                      <textarea ng-model="vm.differentiating_factors" rows="15" md-select-on-focus></textarea>
+                  </md-input-container>
+                  <md-input-container class="md-block">
+                      <label>Summarize Endorsers Comments</label>
+                      <textarea ng-model="vm.endorsers_comments" rows="15" md-select-on-focus></textarea>
+                  </md-input-container>
+
+                    <div class="border-space-ver-1">
+                      <md-toolbar class="md-hue-2">
+                        <div class="md-toolbar-tools">
+                          <h2 style="margin: auto;">
+                            <span>Strengths</span>
+                          </h2>
+                          <span flex></span>
+                        </div>
+                      </md-toolbar>
+                      <div class="border-space-ver-1" ng-repeat="item in vm.strengths track by $index">
+                        <md-toolbar>
+                            <div class="md-toolbar-tools">
+                              <h2 style="margin: auto;">
+                                <span>Strength {{$index + 1}}</span>
+                              </h2>
+                              <span flex></span>
+                              <md-button class="md-icon-button" aria-label="image" ng-click="vm.removeStrength($index, vm.strengths)">
+                                <md-icon md-svg-icon="assets/img/ic_remove_black_24px.svg"></md-icon>
+                              </md-button>
+                            </div>
+                          </md-toolbar>
+                          <br>
+                          <md-input-container class="md-icon-float md-block">
+                            <!-- Use floating label instead of placeholder -->
+                            <label>Strength</label>
+                            <textarea ng-model="vm.strengths[$index][0]" rows="15" md-select-on-focus></textarea>
+                          </md-input-container>
+                      </div>
+                      <md-button class="md-raised" ng-click="vm.addStrength(vm.strengths)" style="float: right;">Add Strength</md-button>
+                      <br>
+                      <br>
+                    </div>
+
+                <div class="border-space-ver-1">
+                      <md-toolbar class="md-hue-2 border-space-ver-1">
+                        <div class="md-toolbar-tools">
+                          <h2 style="margin: auto;">
+                            <span>Weaknesses</span>
+                          </h2>
+                          <span flex></span>
+                        </div>
+                      </md-toolbar>
+                      <div class="border-space-ver-1" ng-repeat="item in vm.weaknesses track by $index">
+                          <md-toolbar>
+                            <div class="md-toolbar-tools">
+                              <h2 style="margin: auto;">
+                                <span>Weakness {{$index + 1}}</span>
+                              </h2>
+                              <span flex></span>
+                              <md-button class="md-icon-button" aria-label="image" ng-click="vm.removeWeakness($index, vm.weaknesses)">
+                                <md-icon md-svg-icon="assets/img/ic_remove_black_24px.svg"></md-icon>
+                              </md-button>
+                            </div>
+                          </md-toolbar>
+                          <br>
+                          <md-input-container class="md-icon-float md-block">
+                            <!-- Use floating label instead of placeholder -->
+                            <label>Weakness</label>
+                            <textarea ng-model="vm.weaknesses[$index][0]" rows="15" md-select-on-focus></textarea>
+                          </md-input-container>
+                      </div>
+                      <md-button class="md-raised" ng-click="vm.addWeakness(vm.weaknesses)" style="float: right;">Add Weakness</md-button>
+                      <br>
+                      <br>
+                  </div>
+
+                  <md-button class="md-raised" ng-click="vm.updatePageToPrevious()">Back</md-button>
+                  <md-button class="md-raised" ng-click="vm.updatePageToNext()">Next</md-button>
+                </md-content>
+            </div>
+        </div>
+
+
+        <!--Page 8-->
+        <div class="container" ng-show="vm.showPage(8)">
+            <div class="row">
+                <md-content>
+                  <div class="border-space-ver-1 " ng-repeat="item in vm.endorsers_detail_list track by $index">
+                      <md-toolbar>
+                        <div class="md-toolbar-tools">
+                          <h2 style="margin: auto;">
+                            <span>Detail {{$index + 1}}</span>
+                          </h2>
+                          <span flex></span>
+                          <md-button class="md-icon-button" aria-label="Favorite" ng-click="vm.removeEndorserDetail($index, vm.endorsers_detail_list)">
+                            <md-icon md-svg-icon="assets/img/ic_remove_black_24px.svg"></md-icon>
+                          </md-button>
+                        </div>
+                      </md-toolbar>
+                      <br>
+                      <md-input-container class="md-icon-float md-block">
+                        <!-- Use floating label instead of placeholder -->
+                        <label>Endorser's Name</label>
+                        <input ng-model="vm.endorsers_detail_list[$index].endorsers_name" type="text">
+                      </md-input-container>
+                      <md-input-container class="md-icon-float md-block">
+                        <!-- Use floating label instead of placeholder -->
+                        <label>Title</label>
+                        <input ng-model="vm.endorsers_detail_list[$index].endorsers_title" type="text">
+                      </md-input-container>
+                      <md-input-container class="md-icon-float md-block">
+                        <!-- Use floating label instead of placeholder -->
+                        <label>Sub Function</label>
+                        <input ng-model="vm.endorsers_detail_list[$index].sub_function" type="text">
+                      </md-input-container>
+                  </div>
+                  
+                  <md-button class="md-raised" ng-click="vm.updatePageToPrevious()">Back</md-button>
+                  <md-button class="md-raised" ng-click="vm.saveChanges()">Save</md-button>
+                  <md-button class="md-raised" ng-click="vm.submit()">Submit</md-button>
+                  
+                  <md-button class="md-raised" ng-click="vm.addEndorserDetail(vm.endorsers_detail_list)" style="float: right;">Add Item</md-button>
+                </md-content>
+            </div>
+        </div>
+    </form>
+</div>
+
+<img ng-if="!vm.disable" style="position: absolute; left: 50%; top: 50%;" src="/assets/img/spinner.gif"/>

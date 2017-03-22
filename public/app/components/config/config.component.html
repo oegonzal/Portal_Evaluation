@@ -1,0 +1,25 @@
+<navigation></navigation>
+
+<div class="container" style="padding-top: 140px;">
+	<md-toolbar layout="row" class="md-hue-2">
+	    <div class="md-toolbar-tools">
+	      <span>Config</span>
+	    </div>
+	</md-toolbar>
+
+  	<div style="padding-top: 10px; width: 60%; float: left;">
+		<div class="inset">
+		  <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="vm.data.cb1">
+		    <span style="margin-left: 4px;font-weight: 600; font-size: 17px;"> Single Collaborative Document for all Users</span>
+		  </md-switch>
+		  <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="vm.data.cb2">
+		    <span style="margin-left: 4px;font-weight: 600; font-size: 17px;"> Lock Evaluation </span>
+		  </md-switch>
+		</div>
+		<br>
+		
+		<md-button class="md-raised" ng-click="">Save Settings</md-button>
+		<md-button class="md-raised" ng-click="vm.archiveBundle()">Archive</md-button>
+		<md-button class="md-raised" style="background-color: #d9534f;" ng-click=""><span style="opacity: 0.8; color: white; font-weight: 600;">Delete Bundle</span></md-button>
+	</div>
+</div>
